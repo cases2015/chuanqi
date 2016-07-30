@@ -14,7 +14,7 @@ $(function(){
             type: 'GET',
             url: '/api/logout',
             complete: function(){
-                window.location.href = '/';
+                window.close();
             }
         });
     });
@@ -69,7 +69,7 @@ $(function(){
                         content: '删除成功!',
                         confirmButton: '知道了',
                         confirm: function(){
-                            window.close();
+                            window.location.href = '/';
                         }
                     });
                 }
