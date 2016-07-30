@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>儿童川崎病病例库</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.loading.min.css">
+    <link rel="stylesheet" href="css/jquery-confirm.min.css">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3 main-left">
+            <img class="main-logo" src="img/log.png">
+            <div class="main-btn-list">
+                <a href="main.html" class="main-btn">全部病例</a>
+                <a href="new.html" class="main-btn">新增病例</a>
+                <a href="#" class="main-btn main-btn-active">关于病例库</a>
+            </div>
+        </div>
+        <div class="col-xs-9 main-right">
+            <div class="main-top-bar">
+                <a class="main-exit pull-right" href="#">退出</a>
+            </div>
+            <div class="text-center" style="margin-top: 200px">
+                <h1>儿童川崎病病例库</h1>
+                <h5>v1.0</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.loading.min.js"></script>
+<script src="js/jquery-confirm.min.js"></script>
+<script>
+    $(".main-exit").click(function(){
+        $('body').loading({message: '正在退出...'});
+
+        $.ajax({
+            type: 'GET',
+            url: '/api/logout',
+            complete: function(){
+                window.location.href = '/';
+            }
+        });
+    });
+</script>
+</body>
+</html>

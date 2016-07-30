@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>儿童川崎病病例库</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.loading.min.css">
+    <link rel="stylesheet" href="css/jquery-confirm.min.css">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+<div class="container">
+    <div class="row main">
+        <div class="col-xs-3 main-left">
+            <img class="main-logo" src="img/log.png">
+            <div class="main-btn-list">
+                <a href="main.html" class="main-btn">全部病例</a>
+                <a href="#" class="main-btn main-btn-active">新增病例</a>
+                <a href="about.html" class="main-btn">关于病例库</a>
+            </div>
+        </div>
+        <div class="col-xs-9 main-right">
+            <div class="main-top-bar main-top-bar-placehoder">
+                <a class="main-exit pull-right" href="#">退出</a>
+            </div>
+            <div class="detail-main">
+
+                <!--基本信息-->
+                <div class="panel panel-primary detail-panel">
+                    <div class="panel-heading">一、基本信息</div>
+                    <table class="table text-center">
+                        <tr>
+                            <td>姓名</td>
+                            <td>病历号</td>
+                            <td>性别</td>
+                            <td>年龄</td>
+                            <td>就诊时间</td>
+                        </tr>
+                        <tr>
+                            <td><input size="15" type="text" id="name"></td>
+                            <td><input size="15" type="text" id="number"></td>
+                            <td><input size="15" type="text" id="sex"></td>
+                            <td><input size="15" type="text" id="age"></td>
+                            <td><input size="15" type="text" id="date"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!--基本症状-->
+                <div class="panel panel-info detail-panel">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">二、基本症状</div>
+                    <table class="table text-center">
+                        <tr>
+                            <td>发热天数</td>
+                            <td>结膜充血</td>
+                            <td>口唇潮红皲裂</td>
+                            <td>杨梅舌</td>
+                            <td>淋巴结肿大</td>
+                            <td>指趾端硬肿</td>
+                            <td>恢复期脱皮</td>
+                            <td>多形皮疹</td>
+                        </tr>
+                        <tr>
+                            <td><input size="8" type="text" id="p1_0"></td>
+                            <td><input size="8" type="text" id="p1_1"></td>
+                            <td><input size="8" type="text" id="p1_2"></td>
+                            <td><input size="8" type="text" id="p1_3"></td>
+                            <td><input size="8" type="text" id="p1_4"></td>
+                            <td><input size="8" type="text" id="p1_5"></td>
+                            <td><input size="8" type="text" id="p1_6"></td>
+                            <td><input size="8" type="text" id="p1_7"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!--重点化验值-->
+                <div class="panel panel-danger detail-panel">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">三、重点化验值</div>
+                    <table class="table text-center">
+                        <tr>
+                            <td colspan="2" style="width: 20%;">项目</td>
+                            <td>数值</td>
+                            <td>参考范围</td>
+                            <td>得分</td>
+                        </tr>
+                        <!--血常规-->
+                        <tr>
+                            <td rowspan="4">血常规</td>
+                            <td>WBC</td>
+                            <td><input size="16" type="text" id="p2_0"></td>
+                            <td><input size="16" type="text" id="p2_1"></td>
+                            <td><input size="16" type="text" id="p2_2"></td>
+                        </tr>
+                        <tr>
+                            <td>N%</td>
+                            <td><input size="16" type="text" id="p2_3"></td>
+                            <td><input size="16" type="text" id="p2_4"></td>
+                            <td><input size="16" type="text" id="p2_5"></td>
+                        </tr>
+                        <tr>
+                            <td>PLT</td>
+                            <td><input size="16" type="text" id="p2_6"></td>
+                            <td><input size="16" type="text" id="p2_7"></td>
+                            <td><input size="16" type="text" id="p2_8"></td>
+                        </tr>
+                        <tr>
+                            <td>CRP</td>
+                            <td><input size="16" type="text" id="p2_9"></td>
+                            <td><input size="16" type="text" id="p2_10"></td>
+                            <td><input size="16" type="text" id="p2_11"></td>
+                        </tr>
+                        <!--肝功能-->
+                        <tr>
+                            <td rowspan="3">肝功能</td>
+                            <td>ALT</td>
+                            <td><input size="16" type="text" id="p2_12"></td>
+                            <td><input size="16" type="text" id="p2_13"></td>
+                            <td><input size="16" type="text" id="p2_14"></td>
+                        </tr>
+                        <tr>
+                            <td>AST</td>
+                            <td><input size="16" type="text" id="p2_15"></td>
+                            <td><input size="16" type="text" id="p2_16"></td>
+                            <td><input size="16" type="text" id="p2_17"></td>
+                        </tr>
+                        <tr>
+                            <td>ALB</td>
+                            <td><input size="16" type="text" id="p2_18"></td>
+                            <td><input size="16" type="text" id="p2_19"></td>
+                            <td><input size="16" type="text" id="p2_20"></td>
+                        </tr>
+                        <!--出凝血-->
+                        <tr>
+                            <td rowspan="2">出凝血</td>
+                            <td>Fib</td>
+                            <td><input size="16" type="text" id="p2_21"></td>
+                            <td><input size="16" type="text" id="p2_22"></td>
+                            <td><input size="16" type="text" id="p2_23"></td>
+                        </tr>
+                        <tr>
+                            <td>D-Dimer</td>
+                            <td><input size="16" type="text" id="p2_24"></td>
+                            <td><input size="16" type="text" id="p2_25"></td>
+                            <td><input size="16" type="text" id="p2_26"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">NO</td>
+                            <td><input size="16" type="text" id="p2_27"></td>
+                            <td><input size="16" type="text" id="p2_28"></td>
+                            <td><input size="16" type="text" id="p2_29"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">H2S</td>
+                            <td><input size="16" type="text" id="p2_30"></td>
+                            <td><input size="16" type="text" id="p2_31"></td>
+                            <td><input size="16" type="text" id="p2_32"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!--冠状动脉情况-->
+                <div class="panel panel-warning detail-panel">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">四、冠状动脉情况</div>
+                    <div class="panel-body">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="p3" value="0">
+                                无扩张
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="p3" value="1">
+                                扩张
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="p3" value="2">
+                                冠脉瘤形成
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="new-save">
+                    <button id="save" class="btn btn-info form-control">保&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.loading.min.js"></script>
+<script src="js/jquery-confirm.min.js"></script>
+<script src="js/new.js"></script>
+</body>
+</html>

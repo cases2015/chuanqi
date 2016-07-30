@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>儿童川崎病病例库</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.loading.min.css">
+    <link rel="stylesheet" href="css/jquery-confirm.min.css">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+<div class="container">
+    <div class="row main">
+        <div class="col-xs-3 main-left">
+            <img class="main-logo" src="img/log.png">
+            <div class="main-btn-list">
+                <a href="#" class="main-btn main-btn-active">全部病例</a>
+                <a href="new.html" class="main-btn">新增病例</a>
+                <a href="about.html" class="main-btn">关于病例库</a>
+            </div>
+        </div>
+        <div class="col-xs-9 main-right">
+            <div class="main-top-bar">
+                <input id="keyword" class="input-lg list-search" type="text" placeholder="搜索">
+                <a class="main-exit pull-right" href="#">退出</a>
+            </div>
+
+            <div class="panel panel-default list-table-container">
+                <!-- Default panel contents -->
+                <div class="list-table-header">
+                    <table class="table list-table">
+                        <tr>
+                            <td style="width: 20%;">病例编号</td>
+                            <td style="width: 20%;">姓名</td>
+                            <td style="width: 20%;">病案号</td>
+                            <td style="width: 20%;">性别</td>
+                            <td style="width: 20%;">年龄</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Table -->
+                <div id="list" class="list-table"></div>
+
+                <div class="list-nav">
+                    <nav>
+                        <ul class="pagination" id="nav"></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.loading.min.js"></script>
+<script src="js/jquery-confirm.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

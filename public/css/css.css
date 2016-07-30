@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 1024px!important;
+}
+
+.welcom {
+    padding: 0;
+}
+
+.welcom-img {
+    width: 100%;
+}
+
+.errorinfo {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.login {
+    margin-top: 20%;
+}
+
+.main {
+    overflow: hidden;
+}
+
+.main-left {
+    min-height: 768px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 3000px;
+    margin-bottom: -3000px;
+    overflow: hidden;
+    background-color: #374042;
+}
+
+.main-logo {
+    width: 100%;
+}
+.main-right {
+    padding: 0;
+    background-color: #F2F4F8;
+    min-height: 768px;
+    padding-bottom: 3000px;
+    margin-bottom: -3000px;
+    overflow: hidden;
+}
+
+.main-btn-list {
+    margin-top: 30px;
+}
+
+.main-btn {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    color: mintcream;
+    font-size: medium;
+}
+
+.main-btn-active {
+    background-color: #4A595C;
+    text-decoration:none;
+}
+
+.main-btn:hover {
+    /*background-color: #4A595C;*/
+    color: mintcream;
+    text-decoration:none;
+}
+
+.main-btn:active {
+    /*background-color: #4A595C;*/
+    color: mintcream;
+    text-decoration:none;
+}
+
+.main-btn:visited {
+    /*background-color: #4A595C;*/
+    color: mintcream;
+    text-decoration:none;
+}
+
+.main-btn:focus {
+    /*background-color: #4A595C;*/
+    color: mintcream;
+    text-decoration:none;
+}
+
+.main-exit {
+    margin-right: 20px;
+    font-size: medium;
+    margin-top: 10px;
+    color: #898585;
+}
+
+.main-top-bar {
+    width: 100%;
+    padding-left: 0;
+    border-bottom: 1px solid #EAEDF4;
+    background-color: white;
+}
+
+.main-top-bar-placehoder {
+    height: 47px;
+}
+
+.main-version {
+    text-align: center;
+    color: mintcream;
+    margin-top: 300px;
+    width:100%;
+}
+
+.list-search {
+    border: none;
+    border-right: 1px solid #EAEDF4;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    text-align: left;
+}
+
+.list-table-container {
+    margin-top: 36px;
+    margin-left: 3%;
+    width: 94%;
+    height:668px;
+}
+
+.list-table-header {
+    background-color: #E9E3E3;
+}
+
+.list-table {
+    margin-top: 0;
+    padding-top: 0;
+    margin-left: 10%;
+    width: 80%;
+    text-align: center;
+}
+
+.list-nav {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.detail-main {
+    margin-top: 36px;
+}
+
+.detail-panel {
+    margin-left: 3%;
+    width: 94%;
+}
+
+.new-save {
+    padding-left: 40%;
+    padding-right: 40%;
+    margin-bottom: 20px;
+}
+
+.details-input {
+    text-align: center;
+    border-width: 0px;
+}
+
+.loading {
+    text-align: center;
+}
+
+.edit-container {
+    margin-bottom: 20px;
+}
+
+.view-container {
+    margin-bottom: 20px;
+}
