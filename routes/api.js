@@ -34,12 +34,14 @@ router.get('/logout',function(req,res,next){
 });
 
 router.get('/list', function(req,res,next){
-    console.log(req.session.logined);
     if(!req.session.logined){
         return res.send({code:10003,msg:'未登录'});
     }
 
     var keyword = req.query.k;
+    if(typeof (keyword) != 'undefined'){
+        keyword = decodeURIComponent(keyword);
+    }
     var pageSize = req.query.s ? req.query.s : 10;
     var pageNum = req.query.n ? req.query.n : 0;
 

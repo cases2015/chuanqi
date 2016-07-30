@@ -5,9 +5,39 @@
 'use strict';
 
 $(function(){
+    var QueryString = {
+        data: {},
+        Initial: function() {
+            var aPairs, aTmp;
+            var queryString = new String(window.location.search);
+            queryString = queryString.substr(1, queryString.length); //remove   "?"
+            aPairs = queryString.split("&");
+            for (var i = 0; i < aPairs.length; i++) {
+                aTmp = aPairs[i].split("=");
+                this.data[aTmp[0]] = aTmp[1];
+            }
+        },
+        GetValue: function(key) {
+            return this.data[key];
+        }
+    };
+    QueryString.Initial();
+
     var currentPage = 0;
     var currentKeyword = '';
     var pageSize = 10;
+
+    if(typeof(QueryString.GetValue('p')) != 'undefined'){
+        currentPage = parseInt(QueryString.GetValue('p'));
+    }
+
+    if(typeof(QueryString.GetValue('k')) != 'undefined'){
+        currentKeyword = QueryString.GetValue('k');
+    }
+
+    if(typeof (currentKeyword) != 'undefined'){
+        $('#keyword').val(decodeURIComponent(currentKeyword));
+    }
 
     var createList = function(list){
         var listHtml = '<table id="list" class="table table-hover">';
@@ -41,6 +71,13 @@ $(function(){
         })
     };
 
+    var getListUrl = function(page){
+        if(typeof (page) != 'undefined'){
+            return 'main.html?p=' + page + '&k=' + encodeURIComponent(currentKeyword);
+        }
+        return 'main.html?p=' + currentPage + '&k=' + encodeURIComponent(currentKeyword);
+    };
+
     var createNav = function(total){
         var pageCount = Math.ceil(total / pageSize);
 
@@ -49,16 +86,19 @@ $(function(){
 
         var navHtml = '<li';
         if(currentPage === 0){
-            navHtml += ' class="disabled"';
+            navHtml += ' class="disabled"><a href="#"';
         }
-        navHtml += '><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
+        else {
+            navHtml += '><a href="' + getListUrl(currentPage - 1) + '"';
+        }
+        navHtml += ' aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
 
         for (var i = begin; i <= end; i++){
             if( i === currentPage){
                 navHtml += '<li class="active"><a href="#">';
             }
             else {
-                navHtml += '<li><a href="#">';
+                navHtml += '<li><a href="' + getListUrl(i) + '">';
             }
 
             navHtml += (i + 1) + '</a>';
@@ -67,9 +107,12 @@ $(function(){
 
         navHtml += '<li';
         if(currentPage === pageCount - 1){
-            navHtml += ' class="disabled"';
+            navHtml += ' class="disabled"><a href="#"';
         }
-        navHtml +='><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>';
+        else {
+            navHtml += '><a href="' + getListUrl(currentPage + 1) + '"';
+        }
+        navHtml +=' aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>';
 
         $('#nav').html(navHtml);
     };
@@ -131,13 +174,17 @@ $(function(){
         });
     };
 
+    var loadPage = function(){
+        window.location.href = getListUrl();
+    };
+
     $('#keyword').change(function(){
         var keyword = $(this).val().trim();
-        if(keyword.length > 0 && keyword !== currentKeyword){
+        if(keyword !== currentKeyword){
             currentKeyword = keyword;
             currentPage = 0;
 
-            queryPatient();
+            loadPage();
         }
     });
 

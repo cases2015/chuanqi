@@ -69,7 +69,8 @@ $(function(){
                         content: '删除成功!',
                         confirmButton: '知道了',
                         confirm: function(){
-                            window.location.href = '/';
+                            window.opener.location.reload();
+                            window.close();
                         }
                     });
                 }
